@@ -8,7 +8,9 @@ import (
 func main() {
 
 	r := gin.Default()
-	r.GET("/api/todos", database.GetTodos)
+	r.GET("/api/todos", database.GetTodosHandler)
+	r.POST("/api/todos", database.InsertDB)
+	r.DELETE("/api/todos/:id", database.DeleteTodo)
 	r.Run(":1234")
 
 }

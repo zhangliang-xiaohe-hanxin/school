@@ -67,7 +67,7 @@ func getAll(db *sql.DB, c *gin.Context) {
 	c.JSON(http.StatusOK, todos)
 }
 
-func GetTodos(c *gin.Context) {
+func GetTodosHandler(c *gin.Context) {
 	db, err := sql.Open("postgres", os.Getenv("host"))
 	if err != nil {
 		log.Println(os.Getenv("host"))
