@@ -13,6 +13,6 @@ func main() {
 	r.GET("/api/todos", database.GetTodosHandler)
 	r.POST("/api/todos", database.InsertDB)
 	r.DELETE("/api/todos/:id", database.DeleteTodo)
-	r.Run(fmt.Sprintf(":", os.Getenv("port")))
+	r.Run(fmt.Sprintf(":%s", os.Getenv("port")))
 
 }
