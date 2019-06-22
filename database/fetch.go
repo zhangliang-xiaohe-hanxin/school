@@ -82,6 +82,7 @@ func GetTodos(c *gin.Context) {
 
 	if ok {
 		filter(db, c, id[0])
+		return
 	} 
 
 	getAll(db, c)
